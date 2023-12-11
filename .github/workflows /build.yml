@@ -1,4 +1,0 @@
-name: Build and Deploy PB
-
-on:
-  workflow_dispatch: {}

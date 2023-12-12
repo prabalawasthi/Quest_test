@@ -3,11 +3,8 @@ name: Build and Deploy PB
 on:
   workflow_dispatch: {}
 jobs:
-  build:
-    runs-on: self-hosted
+  first-job:
+    runs-on: windows-latest
+      steps:
+        -run: java --version
     
-    env:
-      Current_Branch: ${{ github.ref }}
-      Github_Access_Token: ${{ secrets.ACCESS_TOKEN_GITHUB }}
-      JFrog_API_Token: ${{ secrets.API_TOKEN_JFROG }}
-      Commit_ID: ${{github.sha}}

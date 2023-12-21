@@ -34,3 +34,10 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: notify of success
+        if: ${{ success() }}
+        uses: tokorom/action-slack-incoming-webhook@main
+        env:
+          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          text: ":heavy_check_mark: Build success - Deploy -  Server - TEST - Azure Web pps CI/CD. :heavy_check_mark:"
